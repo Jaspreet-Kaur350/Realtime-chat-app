@@ -30,3 +30,14 @@ io.on('connection', (socket) => {
 server.listen(3000, () => {
   console.log('Server running on http://localhost:3000');
 });
+const mongoose = require('mongoose');
+
+// Replace with your actual connection string
+const mongoURI = 'mongodb+srv://Jaspreet_lpu:I7xHGJBUo3dyu4uZ@cluster0.cf87slh.mongodb.net/FUll_stack';
+
+mongoose.connect(mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('✅ MongoDB connected successfully'))
+.catch(err => console.error('❌ MongoDB connection error:', err));
